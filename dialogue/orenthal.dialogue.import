@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://iji4puoidgb"
+path="res://.godot/imported/orenthal.dialogue-e16a602ae8a4cbdf5b84c6db8c7fb290.tres"
+
+[deps]
+
+source_file="res://dialogue/orenthal.dialogue"
+dest_files=["res://.godot/imported/orenthal.dialogue-e16a602ae8a4cbdf5b84c6db8c7fb290.tres"]
+
+[params]
+
+defaults=true

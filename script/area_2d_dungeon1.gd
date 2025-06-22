@@ -1,0 +1,19 @@
+extends Area2D
+
+var entered = false
+
+func _on_body_entered(body: Player) :
+	entered=true
+	SaveSystem.player_position_world_2 = body.position
+		
+func _physics_process(_delta: float) -> void:
+	if entered==true:
+		if Input.is_action_pressed("up") :
+			SaveSystem.current_scene_path = "res://scenes/dungeon.tscn"
+			SaveSystem.save_game()
+			SaveSystem.save_backup()
+			get_tree().change_scene_to_file("res://scenes/dungeon.tscn")
+
+func _on_body_exited(_body: Player) :
+	entered=false
+	pass

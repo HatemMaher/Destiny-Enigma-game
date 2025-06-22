@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwfqkpbaf0irr"]
+
+[ext_resource type="Script" uid="uid://brk21lphaxk7b" path="res://script/upgrade_ui.gd" id="1_k1o73"]
+
+[node name="upgrade_ui" type="CanvasLayer"]
+script = ExtResource("1_k1o73")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 104.0
+offset_top = 15.0
+offset_right = 354.0
+offset_bottom = 249.0
+
+[node name="health_upgrade" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 41.0
+offset_right = 207.0
+offset_bottom = 74.0
+text = "upgrade health"
+
+[node name="close" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 4.0
+offset_right = 251.0
+offset_bottom = 37.0
+text = "close"
+
+[node name="damage_upgrade" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 85.0
+offset_right = 211.0
+offset_bottom = 118.0
+text = "upgrade damage"
+
+[connection signal="pressed" from="Panel/health_upgrade" to="." method="_on_health_upgrade_pressed"]
+[connection signal="pressed" from="Panel/close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Panel/damage_upgrade" to="." method="_on_damage_upgrade_pressed"]

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://uu6yqkm673i2"]
+
+[ext_resource type="Texture2D" uid="uid://dqm3u0r2j3ulq" path="res://sprites/interact/TextBox_Blank_Side.png" id="1_rc1id"]
+
+[node name="DialogueBox" type="Sprite2D"]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_rc1id")

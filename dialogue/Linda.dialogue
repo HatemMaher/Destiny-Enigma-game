@@ -1,0 +1,18 @@
+~ start
+if SaveSystem.arrival_at_village:
+	set SaveSystem.arrival_at_village=false
+	Linda: Who are you? How did you appear so suddenly?
+	Ryusei: It doesn't matter. Trust me, I'm here to help.
+	Linda: My father... Adrius... is ill from Morphis' curse,
+	Linda: He is sending monsters from the cave!
+	Ryusei: I will do what I can to help.
+	Linda: TThe prophecy speaks of a warrior...
+	Linda: One who will rise from the mist and save us from doom.
+	Linda: Could it be—? Behind you! Beware!
+else:
+	% Linda: How are you doing?
+	% Linda: welcome to the village , Adventurer
+	
+	
+	
+=> END

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0h2apfik6goj"]
+
+[ext_resource type="Script" uid="uid://wu6lfrlqyvv0" path="res://script/interact_area.gd" id="1_gi6b7"]
+[ext_resource type="Texture2D" uid="uid://chxekblov1n18" path="res://sprites/interact/Interact.png" id="2_7dxay"]
+[ext_resource type="AudioStream" uid="uid://bc3a764wji2no" path="res://audio/mixkit-water-bubble-1317.wav" id="4_rbxfc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rbxfc"]
+radius = 15.0
+
+[node name="interact_area" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_gi6b7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rbxfc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(10, -10)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("2_7dxay")
+vframes = 2
+
+[node name="box_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_rbxfc")
+volume_db = -10.793
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,882 @@
+[gd_scene load_steps=16 format=3 uid="uid://bxbbchifrlwl5"]
+
+[ext_resource type="Texture2D" uid="uid://coqod28l4mlpr" path="res://sprites/characters/portrait/ChatGPT Image May 2, 2025, 02_58_47 AM.png" id="1_nx57b"]
+[ext_resource type="Script" uid="uid://brgt5u3uu8k2n" path="res://script/cutscenes/cutscene_beginning.gd" id="1_p36sv"]
+[ext_resource type="Texture2D" uid="uid://c1qqe18hnk7vc" path="res://sprites/characters/portrait/Remove background project.png" id="2_54bbl"]
+[ext_resource type="Texture2D" uid="uid://qpt3js550j8v" path="res://sprites/characters/portrait/Default_Extremely_long_Destiny_Enigma_sword_15x_normal_length_1_2292ede2-1b8e-4ee7-8002-7baf43425667_0.png" id="2_nn0wy"]
+[ext_resource type="Texture2D" uid="uid://djmxmcysrstf" path="res://sprites/objects/clouds/4.1.png" id="3_p36sv"]
+[ext_resource type="Texture2D" uid="uid://cqysax6c0v26y" path="res://sprites/characters/portrait/Remove background project2.png" id="3_ucqrs"]
+[ext_resource type="Texture2D" uid="uid://ckdocgtvnofgx" path="res://sprites/objects/clouds/4.2.png" id="4_nn0wy"]
+[ext_resource type="Texture2D" uid="uid://cyuhjd75h7dbk" path="res://sprites/characters/portrait/ChatGPT Image May 2, 2025, 02_58_41 AM.png" id="6_bc6vr"]
+[ext_resource type="Texture2D" uid="uid://cuf0fn8g4sa5k" path="res://sprites/characters/portrait/Leonardo_Anime_XL_manga_illustration_digitally_colored_lineart_143.png" id="7_3ym38"]
+[ext_resource type="PackedScene" uid="uid://bym1nj1fu1ksq" path="res://scenes/menu.tscn" id="10_bc6vr"]
+
+[sub_resource type="Animation" id="Animation_54bbl"]
+resource_name = "Chapter1_1"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cutscene_camera2d:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 26.5667, 27.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cutscene_camera2d:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.4, 26.5667, 27.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.21, 0.21), Vector2(0.275, 0.275), Vector2(0.275, 0.275), Vector2(0.3, 0.3)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("objects/cloud _1_1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4.83333, 5.06667, 10.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-35, 600), Vector2(-1378, 597), Vector2(0, 600), Vector2(-1378, 597)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("objects/cloud_1_2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4.83333, 5.06667, 10.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-55, 524), Vector2(1331, 600), Vector2(-70, 524), Vector2(1331, 600)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Panel:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.63333, 4.26667, 9.26667, 26.5667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/Panel/VBoxContainer/Label:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.3, 9, 12.2, 14.2, 15.2, 17.2, 20.2, 22.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["Ryusei", "Orenthal", "Ryusei", "Orenthal", "Ryusei", "Orenthal", "Ryusei", "Orenthal"]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/Panel/VBoxContainer/RichTextLabel:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.3, 9, 12.2, 14.2, 15.2, 17.2, 20.2, 22.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["[font_size=12]Where am I? What is this sword?", "[font_size=12]I've waited long for you, Ryusei. This 'Destiny Enigma' sword is your fate to wield.", "[font_size=12]Who are you? Why give me this sword?", "[font_size=12]It chose you.", "[font_size=12]My head hurts! I remember nothing! How did I get here?", "[font_size=12]I'll tell you when the time is right. Now kill the monsters and collect Nuran Stones.", "[font_size=12]What are these stones you speak of?", "[font_size=10]Nuran Stones... the key to your growth and reward for defeating monsters. They'll help upgrade your sword. Go collect what I told you. You'll find me in my hut when finished."]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer/Panel/VBoxContainer/RichTextLabel:visible_ratio")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.3, 2.5, 8.53333, 9.26667, 11.9, 12, 12.2, 13.9, 14, 14.2, 14.9, 15, 15.2, 16.9, 17, 17.2, 19.9, 20, 20.2, 21.9, 22, 22.2, 26.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("objects/sword:texture")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_nn0wy")]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("objects/sword:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 13, 13.5, 14, 14.5, 15, 15.5, 16, 16.5, 17, 17.5, 18, 18.5, 19, 19.5, 20, 20.5, 21, 21.5, 22, 22.5, 23, 23.5, 24, 24.5, 25, 25.5, 26, 26.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 0.941176, 1), Color(0.254902, 1, 1, 0.627451), Color(1, 1, 0.941176, 1), Color(0.254902, 1, 1, 0.627451), Color(1, 1, 0.941176, 1), Color(0.254902, 1, 1, 0.627451), Color(1, 1, 0.941176, 1), Color(0.254902, 1, 1, 0.627451), Color(1, 1, 0.941176, 1), Color(0.254902, 1, 1, 0.627451), Color(1, 1, 0.941176, 1), Color(0.254902, 1, 1, 0.627451), Color(1, 1, 0.941176, 1), Color(0.254902, 1, 1, 0.627451), Color(1, 1, 0.941176, 1), Color(0.254902, 1, 1, 0.627451), Color(1, 1, 0.941176, 1), Color(0.254902, 1, 1, 0.627451), Color(1, 1, 0.941176, 1), Color(0.254902, 1, 1, 0.627451), Color(1, 1, 0.941176, 1), Color(0.254902, 1, 1, 0.627451), Color(1, 1, 0.941176, 1), Color(0.254902, 1, 1, 0.627451), Color(1, 1, 0.941176, 1), Color(0.254902, 1, 1, 0.627451), Color(1, 1, 0.941176, 1), Color(0.254902, 1, 1, 0.627451), Color(1, 1, 0.941176, 1), Color(0.254902, 1, 1, 0.627451), Color(1, 1, 0.941176, 1), Color(0.254902, 1, 1, 0.627451), Color(1, 1, 0.941176, 1), Color(0.254902, 1, 1, 0.627451), Color(1, 1, 0.941176, 1), Color(0.254902, 1, 1, 0.627451), Color(1, 1, 0.941176, 1), Color(0.254902, 1, 1, 0.627451), Color(1, 1, 0.941176, 1), Color(0.254902, 1, 1, 0.627451), Color(1, 1, 0.941176, 1), Color(0.254902, 1, 1, 0.627451), Color(1, 1, 0.941176, 1), Color(0.254902, 1, 1, 0.627451), Color(1, 1, 0.941176, 1), Color(0.254902, 1, 1, 0.627451), Color(1, 1, 0.941176, 1), Color(0.254902, 1, 1, 0.627451), Color(1, 1, 0.941176, 1), Color(0.254902, 1, 1, 0.627451), Color(1, 1, 0.941176, 1), Color(0.254902, 1, 1, 0.627451), Color(1, 1, 0.941176, 1), Color(0.254902, 1, 1, 0.627451)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 4.5, 5, 6, 7.6, 8, 8.36667, 26.5, 28),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath(".")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(4, 11.95, 13.95, 14.95, 16.95, 19.95, 21.95, 26.5033),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"pause"
+}, {
+"args": [],
+"method": &"pause"
+}, {
+"args": [],
+"method": &"pause"
+}, {
+"args": [],
+"method": &"pause"
+}, {
+"args": [],
+"method": &"pause"
+}, {
+"args": [],
+"method": &"pause"
+}, {
+"args": [],
+"method": &"pause"
+}, {
+"args": [],
+"method": &"pause"
+}]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("background:texture")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 5.03333, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_nx57b"), ExtResource("6_bc6vr"), ExtResource("1_nx57b")]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Ryusei:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 5, 8.03333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("objects/sword:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 5.06667, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("old-man:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(5.26667, 5.5, 5.76667, 6.26667, 6.5, 7, 7.26667, 7.76667, 8, 8.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 650), Vector2(0, 700), Vector2(0, 650), Vector2(0, 720), Vector2(0, 660), Vector2(0, 730), Vector2(0, 680), Vector2(0, 760), Vector2(0, 700), Vector2(800, 800)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("old-man:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 5.03333, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("old-man:scale")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(5.06667, 10.8333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.75, 0.75), Vector2(1.4, 1.4)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("old-man:texture")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(4.96667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_ucqrs")]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("old-man2:position")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(8.21318, 9, 9.23333, 9.5, 14, 14.2333, 14.5, 17, 17.2333, 17.5, 22, 22.2333, 22.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1000, 600), Vector2(520, 600), Vector2(520, 590), Vector2(520, 600), Vector2(520, 600), Vector2(520, 590), Vector2(520, 600), Vector2(520, 600), Vector2(520, 590), Vector2(520, 600), Vector2(520, 600), Vector2(520, 590), Vector2(520, 600)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("old-man2:scale")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(8.21318),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.7, 0.7)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("old-man2:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0, 8.03333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Ryusei:position")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0.0333338, 7.9, 8, 12, 12.2667, 12.5, 15, 15.2667, 15.5, 20, 20.2667, 20.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-444, 665), Vector2(-444, 665), Vector2(-700, 700), Vector2(-700, 700), Vector2(-700, 690), Vector2(-700, 700), Vector2(-700, 700), Vector2(-700, 690), Vector2(-700, 700), Vector2(-700, 700), Vector2(-700, 690), Vector2(-700, 700)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Ryusei:scale")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0.0333338, 7.9, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(1, 1)]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("cutscene_camera2d:position")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0, 27),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-3, 457), Vector2(-3, 457)]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("Ryusei:texture")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0.0333338, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("2_54bbl"), ExtResource("2_54bbl")]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("objects/cloud _1_1:visible")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("objects/cloud_1_2:visible")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("CanvasLayer/Panel/VBoxContainer/Label:visible_ratio")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(12, 12.2, 12.5, 13.9, 14, 14.15, 14.5, 14.9, 15, 15.15, 15.5, 16.9, 17, 17.15, 17.5, 19.8, 20, 20.15, 20.5, 21.9, 22, 22.15, 22.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("background:flip_h")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(5.06667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_p36sv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cutscene_camera2d:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cutscene_camera2d:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("objects/cloud _1_1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1161, 1014)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("objects/cloud_1_2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1108, 866)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Panel:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/Panel/VBoxContainer/Label:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Ryusei"]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/Panel/VBoxContainer/RichTextLabel:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["
+"]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer/Panel/VBoxContainer/RichTextLabel:visible_ratio")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("objects/sword:texture")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_nn0wy")]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("objects/sword:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 0.941176, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("background:texture")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_nx57b")]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Ryusei:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("objects/sword:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("old-man:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 650)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("old-man:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("old-man:scale")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.75, 0.75)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("old-man:texture")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_ucqrs")]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("old-man2:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("old-man2:scale")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("old-man2:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Ryusei:position")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-444, 665)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Ryusei:scale")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("cutscene_camera2d:position")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-3, 457)]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Ryusei:texture")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_54bbl")]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("objects/cloud _1_1:visible")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("objects/cloud_1_2:visible")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("CanvasLayer/Panel/VBoxContainer/Label:visible_ratio")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("background:flip_h")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wxmb3"]
+_data = {
+&"Chapter1_1": SubResource("Animation_54bbl"),
+&"RESET": SubResource("Animation_p36sv")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_54bbl"]
+font_size = 14
+
+[sub_resource type="FontFile" id="FontFile_ucqrs"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/12/0/ascent = 0.0
+cache/0/12/0/descent = 0.0
+cache/0/12/0/underline_position = 0.0
+cache/0/12/0/underline_thickness = 0.0
+cache/0/12/0/scale = 1.0
+cache/0/10/0/ascent = 0.0
+cache/0/10/0/descent = 0.0
+cache/0/10/0/underline_position = 0.0
+cache/0/10/0/underline_thickness = 0.0
+cache/0/10/0/scale = 1.0
+
+[node name="cutscene_beginning1" type="Node2D" node_paths=PackedStringArray("animation_player", "camera1")]
+script = ExtResource("1_p36sv")
+animation_player = NodePath("AnimationPlayer")
+camera1 = NodePath("cutscene_camera2d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wxmb3")
+}
+autoplay = "Chapter1_1"
+
+[node name="background" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_nx57b")
+offset = Vector2(0, 300)
+
+[node name="Ryusei" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-444, 665)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_54bbl")
+flip_h = true
+
+[node name="old-man" type="Sprite2D" parent="."]
+position = Vector2(0, 650)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_ucqrs")
+
+[node name="old-man2" type="Sprite2D" parent="."]
+texture = ExtResource("7_3ym38")
+flip_h = true
+
+[node name="objects" type="Node2D" parent="."]
+
+[node name="cloud _1_1" type="Sprite2D" parent="objects"]
+modulate = Color(0.686275, 0.843137, 0.607843, 0.588235)
+z_index = 2
+position = Vector2(1161, 1014)
+scale = Vector2(4, 4)
+texture = ExtResource("3_p36sv")
+
+[node name="cloud_1_2" type="Sprite2D" parent="objects"]
+modulate = Color(0.686275, 0.843137, 0.607843, 0.588235)
+z_index = 2
+position = Vector2(1108, 866)
+scale = Vector2(4, 4)
+texture = ExtResource("4_nn0wy")
+
+[node name="sword" type="Sprite2D" parent="objects"]
+modulate = Color(1, 1, 0.941176, 1)
+position = Vector2(0, 700)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("2_nn0wy")
+
+[node name="cutscene_camera2d" type="Camera2D" parent="."]
+position = Vector2(-3, 457)
+editor_draw_limits = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+visible = false
+self_modulate = Color(0.941176, 0.505882, 0.172549, 0.376471)
+anchors_preset = -1
+anchor_left = -0.268
+anchor_top = 0.019
+anchor_right = -0.268
+anchor_bottom = 0.019
+offset_left = 190.56
+offset_top = 20.48
+offset_right = 540.56
+offset_bottom = 86.48
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.006
+anchor_right = -0.006
+offset_left = 5.1
+offset_top = 1.0
+offset_right = 350.1
+offset_bottom = 66.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Ryusei"
+label_settings = SubResource("LabelSettings_54bbl")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = SubResource("FontFile_ucqrs")
+bbcode_enabled = true
+text = "
+"
+scroll_active = false
+
+[node name="Menu" parent="." instance=ExtResource("10_bc6vr")]

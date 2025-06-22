@@ -1,0 +1,126 @@
+[gd_scene load_steps=11 format=3 uid="uid://cvfslxdeo86si"]
+
+[ext_resource type="Script" uid="uid://cpqpmvkyi6eus" path="res://scenes/game_over.gd" id="1_racf3"]
+[ext_resource type="Texture2D" uid="uid://c2gbt528xaan4" path="res://sprites/objects/GameOver/GameOver.png" id="1_wqhvx"]
+[ext_resource type="Texture2D" uid="uid://qpt3js550j8v" path="res://sprites/characters/portrait/Default_Extremely_long_Destiny_Enigma_sword_15x_normal_length_1_2292ede2-1b8e-4ee7-8002-7baf43425667_0.png" id="2_tbwuq"]
+[ext_resource type="Texture2D" uid="uid://b6idh0atb6axe" path="res://sprites/objects/GameOver/GameOver2.png" id="3_v3hpu"]
+[ext_resource type="AudioStream" uid="uid://bwhvy5b3uut6l" path="res://audio/player-losing-or-failing.wav" id="4_7m3ot"]
+[ext_resource type="PackedScene" uid="uid://bym1nj1fu1ksq" path="res://scenes/menu.tscn" id="5_7m3ot"]
+[ext_resource type="AudioStream" uid="uid://cv6rr8dq5wne7" path="res://audio/ball-tap.wav" id="7_irg28"]
+
+[sub_resource type="Animation" id="Animation_2jtsn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameOver:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameOver2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Swoard:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_irg28"]
+resource_name = "new_animation"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameOver:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameOver2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Swoard:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.254902, 1, 1, 0.627451)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8bugq"]
+_data = {
+&"RESET": SubResource("Animation_2jtsn"),
+&"new_animation": SubResource("Animation_irg28")
+}
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_racf3")
+
+[node name="GameOver" type="Sprite2D" parent="."]
+position = Vector2(244.5, 130.75)
+scale = Vector2(0.320964, 0.256348)
+texture = ExtResource("1_wqhvx")
+
+[node name="GameOver2" type="Sprite2D" parent="."]
+position = Vector2(244.5, 130.75)
+scale = Vector2(0.320964, 0.256348)
+texture = ExtResource("3_v3hpu")
+
+[node name="Swoard" type="Sprite2D" parent="."]
+position = Vector2(240, 182)
+scale = Vector2(0.029068, 0.0327663)
+texture = ExtResource("2_tbwuq")
+
+[node name="game_end" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_7m3ot")
+
+[node name="Menu" parent="." instance=ExtResource("5_7m3ot")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8bugq")
+}
+
+[node name="Press_E_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_irg28")
+bus = &"SFX"

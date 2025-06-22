@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccf6773bikphd"]
+
+[ext_resource type="Script" uid="uid://bks4eltnl6hgw" path="res://script/boss_door_1.gd" id="1_1e2eq"]
+[ext_resource type="Texture2D" uid="uid://bmji44h3h48hv" path="res://sprites/Dungeon/Dungeon_Tileset.png" id="1_ugw7y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7t51"]
+atlas = ExtResource("1_ugw7y")
+region = Rect2(112, 80, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h4iyy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7t51")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwm1d"]
+size = Vector2(4, 16)
+
+[node name="boss door1" type="CharacterBody2D"]
+script = ExtResource("1_1e2eq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_h4iyy")
+frame_progress = 0.978699
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 0)
+shape = SubResource("RectangleShape2D_gwm1d")

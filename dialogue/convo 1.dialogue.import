@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://iji4puoidgb"
+path="res://.godot/imported/convo 1.dialogue-7fdc3833de51f469566762c1e58f07e2.tres"
+
+[deps]
+
+source_file="res://dialogue/convo 1.dialogue"
+dest_files=["res://.godot/imported/convo 1.dialogue-7fdc3833de51f469566762c1e58f07e2.tres"]
+
+[params]
+
+defaults=true

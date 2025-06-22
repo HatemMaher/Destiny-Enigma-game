@@ -1,0 +1,360 @@
+[gd_scene load_steps=22 format=3 uid="uid://bxyb4xhxlamw6"]
+
+[ext_resource type="Script" uid="uid://ciwbivcm2fro" path="res://scenes/option_menu.gd" id="1_m8q4x"]
+[ext_resource type="Texture2D" uid="uid://c4yxngwmt46rm" path="res://sprites/slider/WideSlider_Blank_Button_1.png" id="2_2mid4"]
+[ext_resource type="AudioStream" uid="uid://cv6rr8dq5wne7" path="res://audio/ball-tap.wav" id="2_40sux"]
+[ext_resource type="Texture2D" uid="uid://18xab6n1m7hl" path="res://sprites/slider/Icon_Large_Audio_Blank.png" id="3_x6sq6"]
+[ext_resource type="Texture2D" uid="uid://57jws17bsnpp" path="res://sprites/slider/Icon_Large_AudioOff_Blank.png" id="4_laan2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1j2v"]
+bg_color = Color(0.392411, 0.681709, 0.376596, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_6uflr"]
+color = Color(0.0823529, 0.105882, 0.172549, 1)
+grow_begin = -3.0
+grow_end = -10.0
+thickness = 7
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_e7w18"]
+color = Color(0.619608, 0.607843, 1, 1)
+grow_begin = -3.0
+thickness = 8
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_14fn0"]
+color = Color(0.619608, 0.607843, 1, 1)
+grow_begin = -3.0
+thickness = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_u23oc"]
+font_size = 9
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_8u718"]
+color = Color(0.0823529, 0.105882, 0.172549, 1)
+grow_begin = -3.0
+grow_end = -10.0
+thickness = 8
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_oc10e"]
+color = Color(0.619608, 0.607843, 1, 1)
+grow_begin = -3.0
+thickness = 8
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_sqixt"]
+color = Color(0.619608, 0.607843, 1, 1)
+grow_begin = -3.0
+thickness = 8
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ou6pb"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_x6sq6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_laan2")
+}],
+"loop": false,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x6sq6"]
+font_size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_laan2"]
+font_size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_6uflr"]
+font_size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_e7w18"]
+font_size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_14fn0"]
+font_size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_8u718"]
+font_size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_oc10e"]
+font_size = 5
+
+[node name="option menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m8q4x")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 492.0
+offset_bottom = 301.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_b1j2v")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+offset_left = 207.0
+offset_top = 97.0
+offset_right = 273.0
+offset_bottom = 198.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Volume" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "volume"
+icon_alignment = 1
+
+[node name="control" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "control"
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+offset_left = 131.0
+offset_top = 67.0
+offset_right = 171.0
+offset_bottom = 107.0
+
+[node name="volume" type="Node2D" parent="MarginContainer2"]
+
+[node name="HSlider_Music" type="HSlider" parent="MarginContainer2/volume"]
+offset_left = 69.0
+offset_top = 32.0
+offset_right = 166.0
+offset_bottom = 56.0
+theme_override_icons/grabber = ExtResource("2_2mid4")
+theme_override_icons/grabber_highlight = ExtResource("2_2mid4")
+theme_override_icons/grabber_disabled = ExtResource("2_2mid4")
+theme_override_styles/slider = SubResource("StyleBoxLine_6uflr")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_e7w18")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_14fn0")
+min_value = -30.0
+max_value = 0.0
+
+[node name="Label" type="Label" parent="MarginContainer2/volume"]
+offset_left = 71.0
+offset_top = 25.0
+offset_right = 135.0
+offset_bottom = 39.0
+text = "Music volume"
+label_settings = SubResource("LabelSettings_u23oc")
+
+[node name="HSlider_SFX" type="HSlider" parent="MarginContainer2/volume"]
+offset_left = 69.0
+offset_top = 57.0
+offset_right = 166.0
+offset_bottom = 81.0
+theme_override_icons/grabber = ExtResource("2_2mid4")
+theme_override_icons/grabber_highlight = ExtResource("2_2mid4")
+theme_override_icons/grabber_disabled = ExtResource("2_2mid4")
+theme_override_styles/slider = SubResource("StyleBoxLine_8u718")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_oc10e")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_sqixt")
+min_value = -30.0
+max_value = 0.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer2/volume"]
+position = Vector2(57, 38)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_ou6pb")
+animation = &"new_animation"
+
+[node name="Label2" type="Label" parent="MarginContainer2/volume"]
+offset_left = 71.0
+offset_top = 50.0
+offset_right = 135.0
+offset_bottom = 64.0
+text = "SFX volume"
+label_settings = SubResource("LabelSettings_u23oc")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="MarginContainer2/volume"]
+position = Vector2(57, 63)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_ou6pb")
+animation = &"new_animation"
+
+[node name="back2" type="Button" parent="MarginContainer2/volume"]
+offset_left = 60.0
+offset_top = 89.0
+offset_right = 156.0
+offset_bottom = 111.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 10
+text = "Back"
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 71.0
+offset_right = 150.0
+offset_bottom = 111.0
+
+[node name="control" type="Node2D" parent="MarginContainer3"]
+
+[node name="Label" type="Label" parent="MarginContainer3/control"]
+offset_left = 78.0
+offset_top = -8.0
+offset_right = 184.0
+offset_bottom = 15.0
+text = " Input control"
+
+[node name="move_up" type="Node2D" parent="MarginContainer3/control"]
+position = Vector2(23, 25)
+
+[node name="Label" type="Label" parent="MarginContainer3/control/move_up"]
+offset_top = 2.0
+offset_right = 29.0
+offset_bottom = 9.0
+text = "move up           "
+label_settings = SubResource("LabelSettings_x6sq6")
+
+[node name="BtnMoveUp" type="Button" parent="MarginContainer3/control/move_up"]
+offset_left = 33.0
+offset_right = 77.0
+offset_bottom = 12.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 3
+
+[node name="move_down" type="Node2D" parent="MarginContainer3/control"]
+position = Vector2(23, 45)
+
+[node name="Label" type="Label" parent="MarginContainer3/control/move_down"]
+offset_top = 2.0
+offset_right = 23.0
+offset_bottom = 9.0
+text = "move down"
+label_settings = SubResource("LabelSettings_laan2")
+
+[node name="BtnMoveDown" type="Button" parent="MarginContainer3/control/move_down"]
+offset_left = 33.0
+offset_right = 77.0
+offset_bottom = 12.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 3
+
+[node name="move_left" type="Node2D" parent="MarginContainer3/control"]
+position = Vector2(23, 66)
+
+[node name="Label" type="Label" parent="MarginContainer3/control/move_left"]
+offset_top = 2.0
+offset_right = 19.0
+offset_bottom = 9.0
+text = "move left"
+label_settings = SubResource("LabelSettings_6uflr")
+
+[node name="BtnMoveLeft" type="Button" parent="MarginContainer3/control/move_left"]
+offset_left = 34.0
+offset_right = 78.0
+offset_bottom = 12.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 3
+
+[node name="move_right" type="Node2D" parent="MarginContainer3/control"]
+position = Vector2(23, 87)
+
+[node name="Label" type="Label" parent="MarginContainer3/control/move_right"]
+offset_top = 2.0
+offset_right = 21.0
+offset_bottom = 9.0
+text = "move right"
+label_settings = SubResource("LabelSettings_e7w18")
+
+[node name="BtnMoveRight" type="Button" parent="MarginContainer3/control/move_right"]
+offset_left = 34.0
+offset_right = 78.0
+offset_bottom = 12.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 3
+
+[node name="interact" type="Node2D" parent="MarginContainer3/control"]
+position = Vector2(150, 25)
+
+[node name="Label" type="Label" parent="MarginContainer3/control/interact"]
+offset_top = 2.0
+offset_right = 16.0
+offset_bottom = 9.0
+text = "interact"
+label_settings = SubResource("LabelSettings_14fn0")
+
+[node name="BtnInteract" type="Button" parent="MarginContainer3/control/interact"]
+offset_left = 23.0
+offset_right = 67.0
+offset_bottom = 12.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 3
+
+[node name="Attack" type="Node2D" parent="MarginContainer3/control"]
+position = Vector2(150, 45)
+
+[node name="Label" type="Label" parent="MarginContainer3/control/Attack"]
+offset_top = 2.0
+offset_right = 13.0
+offset_bottom = 9.0
+text = "attack"
+label_settings = SubResource("LabelSettings_8u718")
+
+[node name="BtnAttack" type="Button" parent="MarginContainer3/control/Attack"]
+offset_left = 23.0
+offset_right = 67.0
+offset_bottom = 12.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 3
+
+[node name="roll" type="Node2D" parent="MarginContainer3/control"]
+position = Vector2(150, 66)
+
+[node name="Label" type="Label" parent="MarginContainer3/control/roll"]
+offset_top = 2.0
+offset_right = 7.0
+offset_bottom = 9.0
+text = "roll"
+label_settings = SubResource("LabelSettings_oc10e")
+
+[node name="BtnRoll" type="Button" parent="MarginContainer3/control/roll"]
+offset_left = 23.0
+offset_right = 67.0
+offset_bottom = 12.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 3
+
+[node name="back3" type="Button" parent="MarginContainer3/control"]
+offset_left = 86.0
+offset_top = 110.0
+offset_right = 182.0
+offset_bottom = 132.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 10
+text = "Back"
+
+[node name="select_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_40sux")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/control" to="." method="_on_control_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="value_changed" from="MarginContainer2/volume/HSlider_Music" to="." method="_on_h_slider_music_value_changed"]
+[connection signal="value_changed" from="MarginContainer2/volume/HSlider_SFX" to="." method="_on_h_slider_sfx_value_changed"]
+[connection signal="pressed" from="MarginContainer2/volume/back2" to="." method="_on_back_2_pressed"]
+[connection signal="pressed" from="MarginContainer3/control/move_up/BtnMoveUp" to="." method="_on_btn_move_up_pressed"]
+[connection signal="pressed" from="MarginContainer3/control/move_down/BtnMoveDown" to="." method="_on_btn_move_down_pressed"]
+[connection signal="pressed" from="MarginContainer3/control/move_left/BtnMoveLeft" to="." method="_on_btn_move_left_pressed"]
+[connection signal="pressed" from="MarginContainer3/control/move_right/BtnMoveRight" to="." method="_on_btn_move_right_pressed"]
+[connection signal="pressed" from="MarginContainer3/control/interact/BtnInteract" to="." method="_on_btn_interact_pressed"]
+[connection signal="pressed" from="MarginContainer3/control/Attack/BtnAttack" to="." method="_on_btn_attack_pressed"]
+[connection signal="pressed" from="MarginContainer3/control/roll/BtnRoll" to="." method="_on_btn_roll_pressed"]
+[connection signal="pressed" from="MarginContainer3/control/back3" to="." method="_on_back_3_pressed"]

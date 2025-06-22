@@ -1,0 +1,24 @@
+~ start
+if SaveSystem.orenthal_first_time:
+	set SaveSystem.orenthal_first_time =false
+	Ryusei: Where am I? What is this sword?
+	(A mysterious old man appears from the mist)
+	Orenthal: I've waited long for you, Ryusei. 
+	Orenthal: This 'Destiny Enigma' sword is your fate to wield.
+	Ryusei: Who are you? Why give me this sword?
+	Orenthal: It chose you.
+	Ryusei: My head hurts! 
+	Ryusei: I remember nothing! How did I get here?
+	Orenthal: I'll tell you when the time is right.
+	Orenthal:  Now go collect Nuran Stones.
+	Ryusei: What are these stones you speak of?
+	Orenthal: Nuran Stones... 
+	Orenthal: the key to your growth and reward for defeating monsters.
+	Orenthal: They'll help upgrade your sword. 
+	Orenthal: Go collect what I told you. You'll find me in my hut when finished.
+else:
+	% Orenthal: welcome again , Ryusei , looking to get stronger?
+	% Orenthal: what are you gonna upgrade today?
+	set Upgradesystem.open_menu=true
+=> END
+

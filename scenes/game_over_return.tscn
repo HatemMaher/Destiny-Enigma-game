@@ -1,0 +1,126 @@
+[gd_scene load_steps=11 format=3 uid="uid://nvhrhs7wb50b"]
+
+[ext_resource type="Texture2D" uid="uid://cl50ybkxg26rc" path="res://sprites/objects/GameOver/GameOverReturn.png" id="1_0jfox"]
+[ext_resource type="Script" uid="uid://bru1dkvmkwtw5" path="res://script/game_over_return.gd" id="1_pipov"]
+[ext_resource type="Texture2D" uid="uid://qpt3js550j8v" path="res://sprites/characters/portrait/Default_Extremely_long_Destiny_Enigma_sword_15x_normal_length_1_2292ede2-1b8e-4ee7-8002-7baf43425667_0.png" id="2_0jfox"]
+[ext_resource type="Texture2D" uid="uid://besybdiu7j80u" path="res://sprites/objects/GameOver/GameOverReturn2.png" id="3_w2uhb"]
+[ext_resource type="AudioStream" uid="uid://bwhvy5b3uut6l" path="res://audio/player-losing-or-failing.wav" id="4_b557s"]
+[ext_resource type="PackedScene" uid="uid://bym1nj1fu1ksq" path="res://scenes/menu.tscn" id="5_b557s"]
+[ext_resource type="AudioStream" uid="uid://cv6rr8dq5wne7" path="res://audio/ball-tap.wav" id="7_bi1be"]
+
+[sub_resource type="Animation" id="Animation_w2uhb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sword:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameOver:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GameOver2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_b557s"]
+resource_name = "new_animation"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sword:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.254902, 1, 1, 0.627451)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameOver:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GameOver2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bi1be"]
+_data = {
+&"RESET": SubResource("Animation_w2uhb"),
+&"new_animation": SubResource("Animation_b557s")
+}
+
+[node name="GameOverReturn" type="Node2D"]
+script = ExtResource("1_pipov")
+
+[node name="GameOver" type="Sprite2D" parent="."]
+position = Vector2(244.5, 130.75)
+scale = Vector2(0.320964, 0.256348)
+texture = ExtResource("1_0jfox")
+
+[node name="GameOver2" type="Sprite2D" parent="."]
+position = Vector2(244.5, 130.75)
+scale = Vector2(0.320964, 0.256348)
+texture = ExtResource("3_w2uhb")
+
+[node name="Sword" type="Sprite2D" parent="."]
+position = Vector2(240, 182)
+scale = Vector2(0.029068, 0.0327663)
+texture = ExtResource("2_0jfox")
+
+[node name="game_end" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_b557s")
+
+[node name="Menu" parent="." instance=ExtResource("5_b557s")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_bi1be")
+}
+
+[node name="Press_E_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_bi1be")
+bus = &"SFX"

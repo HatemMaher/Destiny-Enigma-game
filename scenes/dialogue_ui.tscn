@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://defh0eqbxk047"]
+
+[ext_resource type="Script" uid="uid://dea3d336armh7" path="res://script/dialogue_ui.gd" id="1_6q285"]
+[ext_resource type="Texture2D" uid="uid://iwmsyklbrb16" path="res://sprites/interact/Box_Blank_Square.png" id="1_dwk8m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6q285"]
+font_color = Color(0.00184107, 0.00184107, 0.00184107, 1)
+
+[node name="DialogueUI" type="CanvasLayer"]
+script = ExtResource("1_6q285")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 98.0
+offset_top = 177.0
+offset_right = 371.0
+offset_bottom = 235.0
+
+[node name="Portrait" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = -5.0
+offset_right = 278995.0
+offset_bottom = 57000.0
+scale = Vector2(0.001, 0.001)
+texture = ExtResource("1_dwk8m")
+
+[node name="DialogueText" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 9.0
+offset_right = 272.0
+offset_bottom = 52.0
+label_settings = SubResource("LabelSettings_6q285")

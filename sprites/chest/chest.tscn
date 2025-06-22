@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://d4a3hwdcqbp1o"]
+
+[ext_resource type="Script" uid="uid://kisexokskbi8" path="res://sprites/chest/chest.gd" id="1_05kf8"]
+[ext_resource type="Texture2D" uid="uid://bckju3dfu23t0" path="res://sprites/objects/chest_01.png" id="1_dy7sl"]
+[ext_resource type="AudioStream" uid="uid://cphr0e6qepvx0" path="res://audio/771164__steprock__treasure-chest-open.mp3" id="3_srmfo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05kf8"]
+atlas = ExtResource("1_dy7sl")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srmfo"]
+atlas = ExtResource("1_dy7sl")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5egkn"]
+atlas = ExtResource("1_dy7sl")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uu0ej"]
+atlas = ExtResource("1_dy7sl")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_riowp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05kf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srmfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5egkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uu0ej")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vab1f"]
+radius = 16.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dy7sl"]
+size = Vector2(12, 9)
+
+[node name="chest" type="Area2D" groups=["chest"]]
+y_sort_enabled = true
+script = ExtResource("1_05kf8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+sprite_frames = SubResource("SpriteFrames_riowp")
+animation = &"open"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vab1f")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_dy7sl")
+
+[node name="ChestOpenSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_srmfo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

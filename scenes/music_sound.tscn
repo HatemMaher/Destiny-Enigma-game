@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://brt33mhor5wrr"]
+
+[ext_resource type="AudioStream" uid="uid://d2j1h4iii8avy" path="res://audio/Music.mp3" id="1_sp3gp"]
+[ext_resource type="Script" uid="uid://blstxqfew0mrp" path="res://script/music_sound.gd" id="2_udwym"]
+
+[node name="MusicSound" type="AudioStreamPlayer2D"]
+process_mode = 3
+stream = ExtResource("1_sp3gp")
+autoplay = true
+bus = &"Music"
+script = ExtResource("2_udwym")

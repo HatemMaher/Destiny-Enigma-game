@@ -1,0 +1,473 @@
+[gd_scene load_steps=28 format=3 uid="uid://bym1nj1fu1ksq"]
+
+[ext_resource type="Script" uid="uid://c07f3nwhfjlae" path="res://script/pause_menu.gd" id="1_mhnvy"]
+[ext_resource type="Shader" uid="uid://ps30kkro0w3a" path="res://script/colorrect.gdshader" id="2_4ytvr"]
+[ext_resource type="AudioStream" uid="uid://dvdkdvclb3srv" path="res://audio/pause.wav" id="3_g3eks"]
+[ext_resource type="Texture2D" uid="uid://c4yxngwmt46rm" path="res://sprites/slider/WideSlider_Blank_Button_1.png" id="3_v86rl"]
+[ext_resource type="Texture2D" uid="uid://18xab6n1m7hl" path="res://sprites/slider/Icon_Large_Audio_Blank.png" id="4_13sgg"]
+[ext_resource type="AudioStream" uid="uid://cv6rr8dq5wne7" path="res://audio/ball-tap.wav" id="4_v86rl"]
+[ext_resource type="Texture2D" uid="uid://57jws17bsnpp" path="res://sprites/slider/Icon_Large_AudioOff_Blank.png" id="5_i6lef"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_13sgg"]
+shader = ExtResource("2_4ytvr")
+shader_parameter/lod = 0.0
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_v86rl"]
+color = Color(0.0823529, 0.105882, 0.172549, 1)
+grow_begin = -3.0
+grow_end = -10.0
+thickness = 7
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_13sgg"]
+color = Color(0.619608, 0.607843, 1, 1)
+grow_begin = -3.0
+thickness = 8
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_i6lef"]
+color = Color(0.619608, 0.607843, 1, 1)
+grow_begin = -3.0
+thickness = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_mj5lg"]
+font_size = 9
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_mhnvy"]
+color = Color(0.0823529, 0.105882, 0.172549, 1)
+grow_begin = -3.0
+grow_end = -10.0
+thickness = 8
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_4ytvr"]
+color = Color(0.619608, 0.607843, 1, 1)
+grow_begin = -3.0
+thickness = 8
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_g3eks"]
+color = Color(0.619608, 0.607843, 1, 1)
+grow_begin = -3.0
+thickness = 8
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_70i5f"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_13sgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_i6lef")
+}],
+"loop": false,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7jp70"]
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_v86rl"]
+font_size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_13sgg"]
+font_size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_i6lef"]
+font_size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_70i5f"]
+font_size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_i42df"]
+font_size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_6cdou"]
+font_size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_ufwb2"]
+font_size = 5
+
+[sub_resource type="Animation" id="Animation_f1ej7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_jej6c"]
+resource_name = "blur"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oprun"]
+_data = {
+&"RESET": SubResource("Animation_f1ej7"),
+&"blur": SubResource("Animation_jej6c")
+}
+
+[node name="Menu" type="CanvasLayer"]
+layer = 3
+
+[node name="PauseMenu" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_left = 216.0
+offset_top = 117.0
+offset_right = 256.0
+offset_bottom = 157.0
+script = ExtResource("1_mhnvy")
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu"]
+material = SubResource("ShaderMaterial_13sgg")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -216.0
+offset_top = -117.0
+offset_right = 224.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="PauseMenu"]
+layout_mode = 0
+offset_left = -87.0
+offset_top = -48.0
+offset_right = 125.0
+offset_bottom = 86.0
+
+[node name="Resume" type="Button" parent="PauseMenu/Panel"]
+layout_mode = 2
+offset_left = 59.0
+offset_top = 8.0
+offset_right = 154.0
+offset_bottom = 39.0
+focus_mode = 0
+text = "Resume"
+
+[node name="option" type="Button" parent="PauseMenu/Panel"]
+layout_mode = 2
+offset_left = 59.0
+offset_top = 50.0
+offset_right = 154.0
+offset_bottom = 81.0
+focus_mode = 0
+text = "Option"
+
+[node name="Main menu" type="Button" parent="PauseMenu/Panel"]
+layout_mode = 2
+offset_left = 60.0
+offset_top = 93.0
+offset_right = 156.0
+offset_bottom = 124.0
+focus_mode = 0
+text = "Main menu"
+
+[node name="option" type="Panel" parent="PauseMenu"]
+layout_mode = 0
+offset_left = -87.0
+offset_top = -48.0
+offset_right = 125.0
+offset_bottom = 86.0
+
+[node name="volume" type="Button" parent="PauseMenu/option"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 8.0
+offset_right = 154.0
+offset_bottom = 39.0
+focus_mode = 0
+text = "Volume"
+
+[node name="control" type="Button" parent="PauseMenu/option"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 50.0
+offset_right = 154.0
+offset_bottom = 81.0
+focus_mode = 0
+text = "control"
+
+[node name="back" type="Button" parent="PauseMenu/option"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 93.0
+offset_right = 156.0
+offset_bottom = 124.0
+focus_mode = 0
+text = "Back"
+
+[node name="volume" type="Panel" parent="PauseMenu"]
+layout_mode = 0
+offset_left = -87.0
+offset_top = -48.0
+offset_right = 125.0
+offset_bottom = 86.0
+
+[node name="HSlider_Music" type="HSlider" parent="PauseMenu/volume"]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 32.0
+offset_right = 166.0
+offset_bottom = 56.0
+theme_override_icons/grabber = ExtResource("3_v86rl")
+theme_override_icons/grabber_highlight = ExtResource("3_v86rl")
+theme_override_icons/grabber_disabled = ExtResource("3_v86rl")
+theme_override_styles/slider = SubResource("StyleBoxLine_v86rl")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_13sgg")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_i6lef")
+min_value = -30.0
+max_value = 0.0
+
+[node name="Label" type="Label" parent="PauseMenu/volume"]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 25.0
+offset_right = 135.0
+offset_bottom = 39.0
+text = "Music volume"
+label_settings = SubResource("LabelSettings_mj5lg")
+
+[node name="HSlider_SFX" type="HSlider" parent="PauseMenu/volume"]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 57.0
+offset_right = 166.0
+offset_bottom = 81.0
+theme_override_icons/grabber = ExtResource("3_v86rl")
+theme_override_icons/grabber_highlight = ExtResource("3_v86rl")
+theme_override_icons/grabber_disabled = ExtResource("3_v86rl")
+theme_override_styles/slider = SubResource("StyleBoxLine_mhnvy")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_4ytvr")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_g3eks")
+min_value = -30.0
+max_value = 0.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PauseMenu/volume"]
+position = Vector2(57, 38)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_70i5f")
+animation = &"new_animation"
+
+[node name="Label2" type="Label" parent="PauseMenu/volume"]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 50.0
+offset_right = 135.0
+offset_bottom = 64.0
+text = "SFX volume"
+label_settings = SubResource("LabelSettings_mj5lg")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="PauseMenu/volume"]
+position = Vector2(57, 63)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_70i5f")
+animation = &"new_animation"
+
+[node name="back2" type="Button" parent="PauseMenu/volume"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 89.0
+offset_right = 156.0
+offset_bottom = 111.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 10
+text = "Back"
+
+[node name="control" type="Panel" parent="PauseMenu"]
+layout_mode = 0
+offset_left = -87.0
+offset_top = -48.0
+offset_right = 125.0
+offset_bottom = 86.0
+
+[node name="Label" type="Label" parent="PauseMenu/control"]
+layout_mode = 2
+offset_left = 73.0
+offset_top = 5.0
+offset_right = 140.0
+offset_bottom = 21.0
+text = " Input control"
+label_settings = SubResource("LabelSettings_7jp70")
+
+[node name="move_up" type="Node2D" parent="PauseMenu/control"]
+position = Vector2(23, 25)
+
+[node name="Label" type="Label" parent="PauseMenu/control/move_up"]
+offset_top = 2.0
+offset_right = 29.0
+offset_bottom = 9.0
+text = "move up           "
+label_settings = SubResource("LabelSettings_v86rl")
+
+[node name="BtnMoveUp" type="Button" parent="PauseMenu/control/move_up"]
+offset_left = 33.0
+offset_right = 77.0
+offset_bottom = 12.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 3
+
+[node name="move_down" type="Node2D" parent="PauseMenu/control"]
+position = Vector2(23, 45)
+
+[node name="Label" type="Label" parent="PauseMenu/control/move_down"]
+offset_top = 2.0
+offset_right = 23.0
+offset_bottom = 9.0
+text = "move down"
+label_settings = SubResource("LabelSettings_13sgg")
+
+[node name="BtnMoveDown" type="Button" parent="PauseMenu/control/move_down"]
+offset_left = 33.0
+offset_right = 77.0
+offset_bottom = 12.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 3
+
+[node name="move_left" type="Node2D" parent="PauseMenu/control"]
+position = Vector2(23, 66)
+
+[node name="Label" type="Label" parent="PauseMenu/control/move_left"]
+offset_top = 2.0
+offset_right = 19.0
+offset_bottom = 9.0
+text = "move left"
+label_settings = SubResource("LabelSettings_i6lef")
+
+[node name="BtnMoveLeft" type="Button" parent="PauseMenu/control/move_left"]
+offset_left = 34.0
+offset_right = 78.0
+offset_bottom = 12.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 3
+
+[node name="move_right" type="Node2D" parent="PauseMenu/control"]
+position = Vector2(23, 87)
+
+[node name="Label" type="Label" parent="PauseMenu/control/move_right"]
+offset_top = 2.0
+offset_right = 21.0
+offset_bottom = 9.0
+text = "move right"
+label_settings = SubResource("LabelSettings_70i5f")
+
+[node name="BtnMoveRight" type="Button" parent="PauseMenu/control/move_right"]
+offset_left = 34.0
+offset_right = 78.0
+offset_bottom = 12.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 3
+
+[node name="interact" type="Node2D" parent="PauseMenu/control"]
+position = Vector2(127, 25)
+
+[node name="Label" type="Label" parent="PauseMenu/control/interact"]
+offset_top = 2.0
+offset_right = 16.0
+offset_bottom = 9.0
+text = "interact"
+label_settings = SubResource("LabelSettings_i42df")
+
+[node name="BtnInteract" type="Button" parent="PauseMenu/control/interact"]
+offset_left = 23.0
+offset_right = 67.0
+offset_bottom = 12.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 3
+
+[node name="Attack" type="Node2D" parent="PauseMenu/control"]
+position = Vector2(127, 45)
+
+[node name="Label" type="Label" parent="PauseMenu/control/Attack"]
+offset_top = 2.0
+offset_right = 13.0
+offset_bottom = 9.0
+text = "attack"
+label_settings = SubResource("LabelSettings_6cdou")
+
+[node name="BtnAttack" type="Button" parent="PauseMenu/control/Attack"]
+offset_left = 23.0
+offset_right = 67.0
+offset_bottom = 12.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 3
+
+[node name="roll" type="Node2D" parent="PauseMenu/control"]
+position = Vector2(127, 66)
+
+[node name="Label" type="Label" parent="PauseMenu/control/roll"]
+offset_top = 2.0
+offset_right = 7.0
+offset_bottom = 9.0
+text = "roll"
+label_settings = SubResource("LabelSettings_ufwb2")
+
+[node name="BtnRoll" type="Button" parent="PauseMenu/control/roll"]
+offset_left = 23.0
+offset_right = 67.0
+offset_bottom = 12.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 3
+
+[node name="back3" type="Button" parent="PauseMenu/control"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 107.0
+offset_right = 156.0
+offset_bottom = 129.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 10
+text = "Back"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PauseMenu"]
+libraries = {
+&"": SubResource("AnimationLibrary_oprun")
+}
+
+[node name="pause_sound" type="AudioStreamPlayer2D" parent="PauseMenu"]
+stream = ExtResource("3_g3eks")
+
+[node name="select_sound" type="AudioStreamPlayer2D" parent="PauseMenu"]
+stream = ExtResource("4_v86rl")
+
+[connection signal="pressed" from="PauseMenu/Panel/Resume" to="PauseMenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseMenu/Panel/option" to="PauseMenu" method="_on_option_pressed"]
+[connection signal="pressed" from="PauseMenu/Panel/Main menu" to="PauseMenu" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="PauseMenu/option/volume" to="PauseMenu" method="_on_volume_pressed"]
+[connection signal="pressed" from="PauseMenu/option/control" to="PauseMenu" method="_on_control_pressed"]
+[connection signal="pressed" from="PauseMenu/option/back" to="PauseMenu" method="_on_back_pressed"]
+[connection signal="value_changed" from="PauseMenu/volume/HSlider_Music" to="PauseMenu" method="_on_h_slider_music_value_changed"]
+[connection signal="value_changed" from="PauseMenu/volume/HSlider_SFX" to="PauseMenu" method="_on_h_slider_sfx_value_changed"]
+[connection signal="pressed" from="PauseMenu/volume/back2" to="PauseMenu" method="_on_back_2_pressed"]
+[connection signal="pressed" from="PauseMenu/control/move_up/BtnMoveUp" to="PauseMenu" method="_on_btn_move_up_pressed"]
+[connection signal="pressed" from="PauseMenu/control/move_down/BtnMoveDown" to="PauseMenu" method="_on_btn_move_down_pressed"]
+[connection signal="pressed" from="PauseMenu/control/move_left/BtnMoveLeft" to="PauseMenu" method="_on_btn_move_left_pressed"]
+[connection signal="pressed" from="PauseMenu/control/move_right/BtnMoveRight" to="PauseMenu" method="_on_btn_move_right_pressed"]
+[connection signal="pressed" from="PauseMenu/control/interact/BtnInteract" to="PauseMenu" method="_on_btn_interact_pressed"]
+[connection signal="pressed" from="PauseMenu/control/Attack/BtnAttack" to="PauseMenu" method="_on_btn_attack_pressed"]
+[connection signal="pressed" from="PauseMenu/control/roll/BtnRoll" to="PauseMenu" method="_on_btn_roll_pressed"]
+[connection signal="pressed" from="PauseMenu/control/back3" to="PauseMenu" method="_on_back_3_pressed"]
